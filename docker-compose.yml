@@ -6,8 +6,6 @@ services:
       - springboot-db-net
     ports:
       - "8080:8080"
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://docker-mysql:3306/sbms?autoReconnect=true&useSSL=false
     depends_on:
       - mysqldb
   mysqldb:
@@ -18,8 +16,7 @@ services:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=sbms
     ports:
-      - 3306:3306
+      - "3306:3306"
 networks:
   springboot-db-net:
 ...
-
